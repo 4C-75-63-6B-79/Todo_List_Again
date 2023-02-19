@@ -7,8 +7,15 @@ const firstPage = (function initFirstPage() {
         body.appendChild(main);
     }
 
+    function makeHeader() {
+        const main = document.querySelector('main');
+        const header = makeElement({elementType: 'header'});
+        main.appendChild(header);
+    }
+
     function loadFirstPage() {
         makeMain();
+        makeHeader();
     }
 
     return {
@@ -17,4 +24,4 @@ const firstPage = (function initFirstPage() {
 })();
 
 const {loadFirstPage} = firstPage;
-export default firstPage;
+export default loadFirstPage;
