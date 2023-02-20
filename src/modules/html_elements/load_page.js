@@ -15,7 +15,7 @@ const firstPage = (function initFirstPage() {
 
     function makeTitle() {
         const header = document.querySelector('header');
-        const h1Title = makeElement({elementType: 'h1'});
+        const h1Title = makeElement({elementType: 'h1', textContent: 'To Do List'});
         header.appendChild(h1Title);
     }
 
