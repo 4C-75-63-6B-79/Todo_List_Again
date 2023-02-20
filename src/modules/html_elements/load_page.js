@@ -13,9 +13,16 @@ const firstPage = (function initFirstPage() {
         main.appendChild(header);
     }
 
+    function makeTitle() {
+        const header = document.querySelector('header');
+        const h1Title = makeElement({elementType: 'h1'});
+        header.appendChild(h1Title);
+    }
+
     function loadFirstPage() {
         makeMain();
         makeHeader();
+        makeTitle();
     }
 
     return {
