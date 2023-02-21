@@ -1,6 +1,13 @@
 import { makeElement } from "./html_create_function";
 
 const firstPage = (function initFirstPage() {
+    
+    function makeToDoListContainer() {
+        const body = document.querySelector('body');
+        const toDoListContainer = makeElement({id: 'mainContainer'});
+        body.appendChild(toDoListContainer);
+    }
+    
     function makeMain() {
         const body = document.querySelector('body');
         const main = makeElement({elementType: 'main'});
