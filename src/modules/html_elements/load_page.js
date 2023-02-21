@@ -7,29 +7,30 @@ const firstPage = (function initFirstPage() {
         const toDoListContainer = makeElement({id: 'mainContainer'});
         body.appendChild(toDoListContainer);
     }
-    
-    function makeMain() {
-        const body = document.querySelector('body');
-        const main = makeElement({elementType: 'main'});
-        body.appendChild(main);
-    }
 
     function makeHeader() {
-        const main = document.querySelector('main');
+        const mainContainer = document.getElementById('mainContainer');
         const header = makeElement({elementType: 'header'});
-        main.appendChild(header);
+        mainContainer.appendChild(header);
+    }
+
+    function makeMain() {
+        const mainContainer = document.getElementById('mainContainer');
+        const main = makeElement({elementType: 'main'});
+        mainContainer.appendChild(main);
     }
 
     function makeTitle() {
         const header = document.querySelector('header');
-        const h1Title = makeElement({elementType: 'h1', textContent: 'To Do List'});
+        const h1Title = makeElement({elementType: 'h1', textContent: 'To Do List', title: 'To Do List'});
         header.appendChild(h1Title);
     }
 
     function loadFirstPage() {
-        makeMain();
+        makeToDoListContainer();
         makeHeader();
         makeTitle();
+        makeMain();
     }
 
     return {
