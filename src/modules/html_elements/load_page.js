@@ -1,4 +1,4 @@
-import { makeElement } from "./html_create_function";
+import { makeElement, makeInput } from "./html_create_function";
 
 const firstPage = (function initFirstPage() {
     
@@ -26,11 +26,18 @@ const firstPage = (function initFirstPage() {
         header.appendChild(h1Title);
     }
 
+    function makeDarkLightModeToggle() {
+        const header = document.querySelector("header");
+        const darkLightModeToggle = makeInput({type: "checkbox", id:"darkLightModeToggle", value: "dark"});
+        header.appendChild(darkLightModeToggle);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
         makeHeader();
-        makeTitle();
         makeMain();
+        makeTitle();
+        makeDarkLightModeToggle();
     }
 
     return {
