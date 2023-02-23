@@ -44,6 +44,18 @@ const firstPage = (function initFirstPage() {
         header.appendChild(darkLightModeToggle);
     }
 
+    function makeHomeSectionContainer() {
+        const verticalNav = document.querySelector("nav");
+        const homeSectionContainer = makeElement({id: "homeSectionContainer"});
+        verticalNav.appendChild(homeSectionContainer);
+    }
+
+    function makeProjectSectionContainer() {
+        const verticalNav = document.querySelector("nav");
+        const projectSectionContainer = makeElement({id: "projectSectionContainer"});
+        verticalNav.appendChild(projectSectionContainer);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
         makeHeader();
@@ -52,6 +64,8 @@ const firstPage = (function initFirstPage() {
         makeMenuOpenCloseButton();
         makeTitle();
         makeDarkLightModeToggle();
+        makeHomeSectionContainer();
+        makeProjectSectionContainer();
     }
 
     return {
