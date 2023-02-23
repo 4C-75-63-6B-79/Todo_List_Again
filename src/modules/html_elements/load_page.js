@@ -1,4 +1,4 @@
-import { makeElement, makeInput } from "./html_create_function";
+import { makeElement, makeInput, makeButton } from "./html_create_function";
 
 const firstPage = (function initFirstPage() {
     
@@ -26,6 +26,12 @@ const firstPage = (function initFirstPage() {
         mainContainer.appendChild(main);
     }
 
+    function makeMenuOpenCloseButton() {
+        const header = document.querySelector("header");
+        const menuOpenCloseButton = makeButton({type: "button", id: "menuOpenCloseButton", textContent: "Menu", title: "menu button"});
+        header.appendChild(menuOpenCloseButton);
+    }
+
     function makeTitle() {
         const header = document.querySelector("header");
         const h1Title = makeElement({elementType: "h1", textContent: "To Do List", title: "To Do List"});
@@ -43,6 +49,7 @@ const firstPage = (function initFirstPage() {
         makeHeader();
         makeVerticalNav();
         makeMain();
+        makeMenuOpenCloseButton();
         makeTitle();
         makeDarkLightModeToggle();
     }
