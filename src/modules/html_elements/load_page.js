@@ -14,6 +14,12 @@ const firstPage = (function initFirstPage() {
         mainContainer.appendChild(header);
     }
 
+    function makeVerticalNav() {
+        const mainContainer = document.getElementById("mainContainer");
+        const verticalNav = makeElement({elementType: "nav"});
+        mainContainer.appendChild(verticalNav);
+    }
+
     function makeMain() {
         const mainContainer = document.getElementById("mainContainer");
         const main = makeElement({elementType: "main"});
@@ -35,6 +41,7 @@ const firstPage = (function initFirstPage() {
     function loadFirstPage() {
         makeToDoListContainer();
         makeHeader();
+        makeVerticalNav();
         makeMain();
         makeTitle();
         makeDarkLightModeToggle();
