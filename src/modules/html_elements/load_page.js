@@ -50,10 +50,22 @@ const firstPage = (function initFirstPage() {
         verticalNav.appendChild(homeSectionContainer);
     }
 
+    function makeHomeSectionTitle() {
+        const homeSectionContainer = document.getElementById("homeSectionContainer");
+        const h2 = makeElement({elementType: "h2", textContent: "Home", title: "Home"});
+        homeSectionContainer.appendChild(h2);
+    }
+
     function makeProjectSectionContainer() {
         const verticalNav = document.querySelector("nav");
         const projectSectionContainer = makeElement({id: "projectSectionContainer"});
         verticalNav.appendChild(projectSectionContainer);
+    }
+
+    function makeProjectSectionTitle() {
+        const projectSectionContainer = document.getElementById("projectSectionContainer");
+        const h2 = makeElement({elementType: "h2", textContent: "Projects", title: "Projects"});
+        projectSectionContainer.appendChild(h2);
     }
 
     function loadFirstPage() {
@@ -66,6 +78,8 @@ const firstPage = (function initFirstPage() {
         makeDarkLightModeToggle();
         makeHomeSectionContainer();
         makeProjectSectionContainer();
+        makeHomeSectionTitle();
+        makeProjectSectionTitle();
     }
 
     return {
