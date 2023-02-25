@@ -56,6 +56,12 @@ const firstPage = (function initFirstPage() {
         homeSectionContainer.appendChild(h2);
     }
 
+    function makeHomeSectionButtonContainer() {
+        const homeSectionContainer = document.getElementById("homeSectionContainer");
+        const buttonContainer = makeElement({id: "homeButtonContainer"});
+        homeSectionContainer.appendChild(buttonContainer); 
+    }
+
     function makeProjectSectionContainer() {
         const verticalNav = document.querySelector("nav");
         const projectSectionContainer = makeElement({id: "projectSectionContainer"});
@@ -68,18 +74,36 @@ const firstPage = (function initFirstPage() {
         projectSectionContainer.appendChild(h2);
     }
 
+    function makeProjectSectionButtonContainer() {
+        const projectSectionContainer = document.getElementById("projectSectionContainer");
+        const buttonContainer = makeElement({id: "projectSectionButtonContainer"});
+        projectSectionContainer.appendChild(buttonContainer);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
+
+        // making the big elements 
         makeHeader();
         makeVerticalNav();
         makeMain();
+
+        // populating the header
         makeMenuOpenCloseButton();
         makeTitle();
         makeDarkLightModeToggle();
+
+        // populating the nav
         makeHomeSectionContainer();
         makeProjectSectionContainer();
+
+        // populating the homeSection
         makeHomeSectionTitle();
+        makeHomeSectionButtonContainer();
+
+        // populating the project section
         makeProjectSectionTitle();
+        makeProjectSectionButtonContainer();
     }
 
     return {
