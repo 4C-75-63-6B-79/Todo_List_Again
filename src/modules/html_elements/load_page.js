@@ -62,6 +62,16 @@ const firstPage = (function initFirstPage() {
         homeSectionContainer.appendChild(buttonContainer); 
     }
 
+    function makeHomeButtonsAndIndicatorContainer() {
+        const homeButtonContainer = document.getElementById("homeButtonContainer");
+        const containerNames = ["allTasks", "todaysTasks", "next7daysTasks", "importantTasks"];
+
+        containerNames.forEach((containerName) => {
+            const container = makeElement({id: `${containerName}ButtonIndicatorContainer`, classNames: "buttonIndicatorContainer"});
+            homeButtonContainer.appendChild(container);
+        });
+    }
+
     function makeProjectSectionContainer() {
         const verticalNav = document.querySelector("nav");
         const projectSectionContainer = makeElement({id: "projectSectionContainer"});
@@ -100,6 +110,7 @@ const firstPage = (function initFirstPage() {
         // populating the homeSection
         makeHomeSectionTitle();
         makeHomeSectionButtonContainer();
+        makeHomeButtonsAndIndicatorContainer();
 
         // populating the project section
         makeProjectSectionTitle();
