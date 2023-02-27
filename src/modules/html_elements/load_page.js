@@ -64,11 +64,26 @@ const firstPage = (function initFirstPage() {
 
     function makeHomeButtonsAndIndicatorContainer() {
         const homeButtonContainer = document.getElementById("homeButtonContainer");
-        const containerNames = ["allTasks", "todaysTasks", "next7daysTasks", "importantTasks"];
+        const containerNames = ["allTasks", "todaysTasks", "nextWeeksTasks", "importantTasks"];
 
         containerNames.forEach((containerName) => {
             const container = makeElement({id: `${containerName}ButtonIndicatorContainer`, classNames: "buttonIndicatorContainer"});
             homeButtonContainer.appendChild(container);
+        });
+    }
+
+    function makeHomeButtons() {
+        const buttonsProps = [
+            { buttonName: "allTasks", textContent: "All Tasks" },
+            { buttonName: "todaysTasks", textContent: "Today's tasks" },
+            { buttonName: "nextWeeksTasks", textContent: "Next Week's Tasks" },
+            { buttonName: "importantTasks", textContent: "Important Tasks" },
+        ];
+
+        buttonsProps.forEach(({buttonName, textContent}) => {
+            const buttonContainer = document.getElementById(`${buttonName}ButtonIndicatorContainer`);
+            const button = makeButton({id: `${buttonName}Button`, classNames: "homeButton", textContent, title: `${textContent} button`});
+            buttonContainer.appendChild(button);
         });
     }
 
@@ -111,6 +126,7 @@ const firstPage = (function initFirstPage() {
         makeHomeSectionTitle();
         makeHomeSectionButtonContainer();
         makeHomeButtonsAndIndicatorContainer();
+        makeHomeButtons();
 
         // populating the project section
         makeProjectSectionTitle();
