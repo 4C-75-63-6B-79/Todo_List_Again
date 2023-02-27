@@ -120,6 +120,12 @@ const firstPage = (function initFirstPage() {
         projectSectionContainer.appendChild(buttonContainer);
     }
 
+    function makeAddNewProjectButton() {
+        const projectSectionContainer = document.getElementById("projectSectionContainer");
+        const addNewProjectButton = makeButton({id: "addNewProject", textContent: "+ Add a New Project", title: "Add A New Project"});
+        projectSectionContainer.appendChild(addNewProjectButton);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
 
@@ -147,6 +153,7 @@ const firstPage = (function initFirstPage() {
         // populating the project section
         makeProjectSectionTitle();
         makeProjectSectionButtonContainer();
+        makeAddNewProjectButton();
     }
 
     return {
