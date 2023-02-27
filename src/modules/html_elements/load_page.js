@@ -87,6 +87,21 @@ const firstPage = (function initFirstPage() {
         });
     }
 
+    function makeHomeButtonsIndicator() {
+        const indicatorProps = [
+            { containerName: "allTasks", title: "0 tasks left under All Tasks" },
+            { containerName: "todaysTasks", title: "0 tasks left under Today's tasks" },
+            { containerName: "nextWeeksTasks", title: "0 tasks left under Next Week's Tasks" },
+            { containerName: "importantTasks", title: "0 tasks left under Important Tasks" },
+        ];
+
+        indicatorProps.forEach(({containerName, title}) => {
+            const buttonContainer = document.getElementById(`${containerName}ButtonIndicatorContainer`);
+            const indicator = makeElement({id: `${containerName}LeftIndicator`, classNames: "tasksLeftIndicator", textContent: "0", title});
+            buttonContainer.appendChild(indicator);
+        });
+    }
+
     function makeProjectSectionContainer() {
         const verticalNav = document.querySelector("nav");
         const projectSectionContainer = makeElement({id: "projectSectionContainer"});
@@ -127,6 +142,7 @@ const firstPage = (function initFirstPage() {
         makeHomeSectionButtonContainer();
         makeHomeButtonsAndIndicatorContainer();
         makeHomeButtons();
+        makeHomeButtonsIndicator();
 
         // populating the project section
         makeProjectSectionTitle();
