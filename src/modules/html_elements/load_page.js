@@ -126,6 +126,12 @@ const firstPage = (function initFirstPage() {
         projectSectionContainer.appendChild(addNewProjectButton);
     }
 
+    function makeHeaderForMain() {
+        const main = document.querySelector("main");
+        const header = makeElement({elementType: "header", id: "tasksCategoryProjectTitle"});
+        main.appendChild(header);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
 
@@ -154,6 +160,9 @@ const firstPage = (function initFirstPage() {
         makeProjectSectionTitle();
         makeProjectSectionButtonContainer();
         makeAddNewProjectButton();
+
+        // populating the main
+        makeHeaderForMain();
     }
 
     return {
