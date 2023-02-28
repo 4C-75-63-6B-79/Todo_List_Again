@@ -138,6 +138,12 @@ const firstPage = (function initFirstPage() {
         header.appendChild(title);
     }
 
+    function makeTasksContainerInMain() {
+        const main = document.querySelector("main");
+        const tasksContainer = makeElement({id: "tasksContainer"});
+        main.appendChild(tasksContainer);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
 
@@ -170,6 +176,7 @@ const firstPage = (function initFirstPage() {
         // populating the main
         makeHeaderForMain();
         makeTitleForMainHeader();
+        makeTasksContainerInMain();
     }
 
     return {
