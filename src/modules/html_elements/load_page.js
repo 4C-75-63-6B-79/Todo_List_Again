@@ -144,6 +144,12 @@ const firstPage = (function initFirstPage() {
         main.appendChild(tasksContainer);
     }
 
+    function makeAddNewTaskButton() {
+        const main = document.querySelector("main");
+        const addNewTaskButton = makeButton({id: "addNewTask", textContent: "+ Add New Tasks", title: "Add New Task Button"});
+        main.appendChild(addNewTaskButton);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
 
@@ -177,6 +183,7 @@ const firstPage = (function initFirstPage() {
         makeHeaderForMain();
         makeTitleForMainHeader();
         makeTasksContainerInMain();
+        makeAddNewTaskButton();
     }
 
     return {
