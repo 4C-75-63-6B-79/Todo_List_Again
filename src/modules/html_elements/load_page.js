@@ -132,6 +132,12 @@ const firstPage = (function initFirstPage() {
         main.appendChild(header);
     }
 
+    function makeTitleForMainHeader() {
+        const header = document.getElementById("tasksCategoryProjectTitle");
+        const title = makeElement({elementType: "h2", id: "categoryProjectTitle", textContent: "All Tasks", title: "All Tasks"});
+        header.appendChild(title);
+    }
+
     function loadFirstPage() {
         makeToDoListContainer();
 
@@ -163,6 +169,7 @@ const firstPage = (function initFirstPage() {
 
         // populating the main
         makeHeaderForMain();
+        makeTitleForMainHeader();
     }
 
     return {
