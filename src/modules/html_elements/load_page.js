@@ -120,9 +120,13 @@ const firstPage = (function initFirstPage() {
         projectSectionContainer.appendChild(buttonContainer);
     }
 
+    function addNewProjectButtonClicked() {
+        console.log("add new project button clicked");
+    }
+
     function makeAddNewProjectButton() {
         const projectSectionContainer = document.getElementById("projectSectionContainer");
-        const addNewProjectButton = makeButton({id: "addNewProject", textContent: "+ Add a New Project", title: "Add A New Project"});
+        const addNewProjectButton = makeButton({id: "addNewProject", textContent: "+ Add a New Project", title: "Add A New Project", event: "click", callBackFunction: [addNewProjectButtonClicked]});
         projectSectionContainer.appendChild(addNewProjectButton);
     }
 
