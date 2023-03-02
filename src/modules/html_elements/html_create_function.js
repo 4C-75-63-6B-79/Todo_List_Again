@@ -28,7 +28,7 @@ function makeElement({elementType = "div", id, classNames, textContent, title, d
     return element;
 }
 
-function makeButton({id, classNames, textContent, title, dataAttributeName, dataAttributeValue, event, callBackFunction}) {
+function makeButton({id, classNames, textContent, title, dataAttributeName, dataAttributeValue, event, callBackFunction, attributesAndValues}) {
     const button = document.createElement("button");
     button.setAttribute("type", "button");
     if(id) {
@@ -49,6 +49,12 @@ function makeButton({id, classNames, textContent, title, dataAttributeName, data
     }
     if(callBackFunction && event) {
         callBackFunction.forEach(eleFunction => button.addEventListener(event, eleFunction));
+    }
+    if(attributesAndValues) {
+        const attributes = Object.keys(attributesAndValues);
+        attributes.forEach((key) => {
+            button.setAttribute(key, attributesAndValues[key]);
+        });
     }
     return button;
 }
