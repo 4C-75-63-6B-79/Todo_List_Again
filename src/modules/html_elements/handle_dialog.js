@@ -1,4 +1,4 @@
-import { makeElement } from "./html_create_function";
+import { makeButton, makeElement } from "./html_create_function";
 
 const createDialogs = (function initDialogs() {
 
@@ -29,6 +29,12 @@ const createDialogs = (function initDialogs() {
         const header = document.getElementById("dialogHeader");
         const h2Title = makeElement({elementType: "h2", textContent: "Create New Project.", title: "Create New Project"});
         header.appendChild(h2Title);
+    }
+
+    function makeCloseButtonInDialog() {
+        const header = document.getElementById("dialogHeader");
+        const closeButton = makeButton({id: "closeButtonInDialog", textContent: "X", title: "Close Dialog Button"});
+        header.appendChild(closeButton);
     }
 
 })();
