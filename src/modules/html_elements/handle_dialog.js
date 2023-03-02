@@ -25,5 +25,10 @@ const popups = (function initPopups() {
         dialog.appendChild(header);
     }
 
+    function makeTitleInDialog() {
+        const header = document.getElementById("dialogHeader");
+        const h2Title = makeElement({elementType: "h2", textContent: "Create New Project.", title: "Create New Project"});
+        header.appendChild(h2Title);
+    }
 
 })();
