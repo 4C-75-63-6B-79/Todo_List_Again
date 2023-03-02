@@ -1,4 +1,4 @@
-function makeElement({elementType = "div", id, classNames, textContent, title, dataAttributeName, dataAttributeValue, events, callBackFunctions}) {
+function makeElement({elementType = "div", id, classNames, textContent, title, dataAttributeName, dataAttributeValue, events, callBackFunctions, attributesAndValues}) {
     const element = document.createElement(`${elementType}`);
     if(id) {
         element.setAttribute("id", id);
@@ -18,6 +18,12 @@ function makeElement({elementType = "div", id, classNames, textContent, title, d
     }
     if(Array.isArray(events) && Array.isArray(callBackFunctions) && events.length === callBackFunctions.length) {
         events.forEach((event, i) => element.addEventListener(event, callBackFunctions[i]));
+    }
+    if(attributesAndValues) {
+        const attributes = Object.keys(attributesAndValues);
+        attributes.forEach((key) => {
+            element.setAttribute(key, attributesAndValues[key]);
+        });
     }
     return element;
 }
