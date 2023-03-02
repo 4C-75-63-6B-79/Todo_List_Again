@@ -37,4 +37,10 @@ const createDialogs = (function initDialogs() {
         header.appendChild(closeButton);
     }
 
+    function makeFormInDialog() {
+        const dialog = document.querySelector("dialog");
+        const form = makeElement({elementType: "form", attributesAndValues: {"method": "dialog"}});
+        dialog.appendChild(form);
+    }
+
 })();
