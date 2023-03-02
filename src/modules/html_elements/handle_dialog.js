@@ -1,6 +1,6 @@
 import { makeElement } from "./html_create_function";
 
-const popups = (function initPopups() {
+const createDialogs = (function initDialogs() {
 
     // const body = document.querySelector("body");
     // const dialog = makeElement({elementType: "dialog", id: "addNewProjectDialog"});
