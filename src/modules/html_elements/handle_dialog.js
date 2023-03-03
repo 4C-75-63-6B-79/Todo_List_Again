@@ -30,6 +30,16 @@ const createDialogs = (function initDialogs() {
         const h2Title = makeElement({elementType: "h2", textContent: dialogTitle, title: dialogTitle});
         header.appendChild(h2Title);
     }
+    
+    function removeDialog() {
+        const body = document.querySelector("body");
+        const dialog = document.querySelector("dialog");
+        body.removeChild(dialog);
+    }
+
+    function closeButtonClicked() {
+        removeDialog();
+    }
 
     function makeCloseButtonInDialog() {
         const header = document.getElementById("dialogHeader");
@@ -60,11 +70,6 @@ const createDialogs = (function initDialogs() {
         dialog.showModal();
     }
 
-    function removeDialog() {
-        const body = document.querySelector("body");
-        const dialog = document.querySelector("dialog");
-        body.removeChild(dialog);
-    }
 
     function makeNewProjectDialog() {
         makeNewDialog({dialogFor: "Project"});
