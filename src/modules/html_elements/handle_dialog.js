@@ -13,7 +13,7 @@ const createDialogs = (function initDialogs() {
     // body.appendChild(dialog);
     // dialog.showModal();
 
-    function makeNewDialog(dialogFor) {
+    function makeNewDialog({dialogFor}) {
         const body = document.querySelector("body");
         const addNewProjectDialog = makeElement({id: `addNew${dialogFor}dialog`});
         body.appendChild(addNewProjectDialog);
@@ -25,7 +25,7 @@ const createDialogs = (function initDialogs() {
         dialog.appendChild(header);
     }
 
-    function makeTitleInDialog(dialogTitle) {
+    function makeTitleInDialog({dialogTitle}) {
         const header = document.getElementById("dialogHeader");
         const h2Title = makeElement({elementType: "h2", textContent: dialogTitle, title: dialogTitle});
         header.appendChild(h2Title);
@@ -54,5 +54,7 @@ const createDialogs = (function initDialogs() {
         const submitButton = makeButton({textContent: "create project", title: "Confirm Create Project Button", attributesAndValues: {"type": "submit"}});
         form.appendChild(submitButton);
     }
+
+
 
 })();
