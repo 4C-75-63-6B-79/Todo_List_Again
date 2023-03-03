@@ -59,9 +59,14 @@ const createDialogs = (function initDialogs() {
         form.appendChild(textInputForTitle);
     }
 
+    function createButtonClicked(event) {
+        event.preventDefault();
+        removeDialog();
+    }
+
     function makeFormSubmitButton({buttonTextcontent}) {
         const form = document.querySelector("form");
-        const submitButton = makeButton({textContent: buttonTextcontent, title: `Confirm ${buttonTextcontent} Button`, attributesAndValues: {"type": "submit"}});
+        const submitButton = makeButton({textContent: buttonTextcontent, title: `Confirm ${buttonTextcontent} Button`, attributesAndValues: {"type": "submit"}, event: "click", callBackFunction: [createButtonClicked]});
         form.appendChild(submitButton);
     }
 
