@@ -2,17 +2,6 @@ import { makeButton, makeElement, makeInput } from "./html_create_function";
 
 const createDialogs = (function initDialogs() {
 
-    // const body = document.querySelector("body");
-    // const dialog = makeElement({elementType: "dialog", id: "addNewProjectDialog"});
-    // const h2 = makeElement({elementType: "h2", textContent: "Create A New Project", title: "Create A New Project"});
-    // const form = makeElement({elementType: "form", attributesAndValues: { "method": "dialog"}});
-    // const button = makeButton({attributesAndValues: {"type": "submit"}});
-    // dialog.appendChild(h2);
-    // form.appendChild(button);
-    // dialog.appendChild(form);
-    // body.appendChild(dialog);
-    // dialog.showModal();
-
     function makeNewDialog({dialogFor}) {
         const body = document.querySelector("body");
         const addNewProjectDialog = makeElement({elementType: "dialog", id: `addNew${dialogFor}dialog`});
