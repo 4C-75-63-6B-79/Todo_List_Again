@@ -25,9 +25,9 @@ const createDialogs = (function initDialogs() {
         dialog.appendChild(header);
     }
 
-    function makeTitleInDialog() {
+    function makeTitleInDialog(dialogTitle) {
         const header = document.getElementById("dialogHeader");
-        const h2Title = makeElement({elementType: "h2", textContent: "Create New Project.", title: "Create New Project"});
+        const h2Title = makeElement({elementType: "h2", textContent: dialogTitle, title: dialogTitle});
         header.appendChild(h2Title);
     }
 
