@@ -55,6 +55,21 @@ const createDialogs = (function initDialogs() {
         form.appendChild(submitButton);
     }
 
+    function makeNewProjectDialog() {
+        makeNewDialog({dialogFor: "Project"});
+        makeHeaderInDialog();
+        makeTitleInDialog({ dialogTitle: "Create New Project."})
+        makeCloseButtonInDialog();
+        makeFormInDialog();
+        makeTextInputForTitle();
+        makeFormSubmitButton();
+    }
 
-
+    return {
+        makeNewProjectDialog,
+    }
 })();
+
+const { makeNewProjectDialog } = createDialogs;
+
+export default makeNewProjectDialog;
