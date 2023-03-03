@@ -68,6 +68,7 @@ const createDialogs = (function initDialogs() {
         makeFormInDialog();
         makeTextInputForTitle();
         makeFormSubmitButton();
+        showDialog();
     }
 
     return {
