@@ -15,7 +15,7 @@ const createDialogs = (function initDialogs() {
 
     function makeNewDialog({dialogFor}) {
         const body = document.querySelector("body");
-        const addNewProjectDialog = makeElement({id: `addNew${dialogFor}dialog`});
+        const addNewProjectDialog = makeElement({elementType: "dialog", id: `addNew${dialogFor}dialog`});
         body.appendChild(addNewProjectDialog);
     }
 
