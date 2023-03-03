@@ -1,3 +1,4 @@
+import makeNewProjectDialog from "./handle_dialog";
 import { makeElement, makeInput, makeButton } from "./html_create_function";
 
 const firstPage = (function initFirstPage() {
@@ -121,7 +122,7 @@ const firstPage = (function initFirstPage() {
     }
 
     function addNewProjectButtonClicked() {
-        console.log("add new project button clicked");
+        makeNewProjectDialog();
     }
 
     function makeAddNewProjectButton() {
