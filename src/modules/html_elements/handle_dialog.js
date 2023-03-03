@@ -1,4 +1,4 @@
-import { makeButton, makeElement } from "./html_create_function";
+import { makeButton, makeElement, makeInput } from "./html_create_function";
 
 const createDialogs = (function initDialogs() {
 
@@ -41,6 +41,12 @@ const createDialogs = (function initDialogs() {
         const dialog = document.querySelector("dialog");
         const form = makeElement({elementType: "form", attributesAndValues: {"method": "dialog"}});
         dialog.appendChild(form);
+    }
+
+    function makeTextInputForTitle() {
+        const form = document.querySelector("form");
+        const textInputForTitle = makeInput({type: "text", name: "name", minLength: "4", maxLength: "50", placeholder: "Project Title", required: "true"});
+        form.appendChild(textInputForTitle);
     }
 
 })();
