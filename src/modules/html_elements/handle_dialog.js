@@ -49,9 +49,9 @@ const createDialogs = (function initDialogs() {
         form.appendChild(textInputForTitle);
     }
 
-    function makeFormSubmitButton() {
+    function makeFormSubmitButton({buttonTextcontent}) {
         const form = document.querySelector("form");
-        const submitButton = makeButton({textContent: "create project", title: "Confirm Create Project Button", attributesAndValues: {"type": "submit"}});
+        const submitButton = makeButton({textContent: buttonTextcontent, title: `Confirm ${buttonTextcontent} Button`, attributesAndValues: {"type": "submit"}});
         form.appendChild(submitButton);
     }
 
