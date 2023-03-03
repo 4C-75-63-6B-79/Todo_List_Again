@@ -43,7 +43,7 @@ const createDialogs = (function initDialogs() {
 
     function makeCloseButtonInDialog() {
         const header = document.getElementById("dialogHeader");
-        const closeButton = makeButton({id: "closeButtonInDialog", textContent: "X", title: "Close Dialog Button"});
+        const closeButton = makeButton({id: "closeButtonInDialog", textContent: "X", title: "Close Dialog Button", event: "click", callBackFunction: [closeButtonClicked]});
         header.appendChild(closeButton);
     }
 
