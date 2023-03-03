@@ -60,6 +60,12 @@ const createDialogs = (function initDialogs() {
         dialog.showModal();
     }
 
+    function removeDialog() {
+        const body = document.querySelector("body");
+        const dialog = document.querySelector("dialog");
+        body.removeChild(dialog);
+    }
+
     function makeNewProjectDialog() {
         makeNewDialog({dialogFor: "Project"});
         makeHeaderInDialog();
