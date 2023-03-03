@@ -55,6 +55,11 @@ const createDialogs = (function initDialogs() {
         form.appendChild(submitButton);
     }
 
+    function showDialog() {
+        const dialog = document.querySelector("dialog");
+        dialog.showModal();
+    }
+
     function makeNewProjectDialog() {
         makeNewDialog({dialogFor: "Project"});
         makeHeaderInDialog();
