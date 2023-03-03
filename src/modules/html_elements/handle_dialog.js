@@ -13,9 +13,9 @@ const createDialogs = (function initDialogs() {
     // body.appendChild(dialog);
     // dialog.showModal();
 
-    function makeNewProjectDialog() {
+    function makeNewDialog(dialogFor) {
         const body = document.querySelector("body");
-        const addNewProjectDialog = makeElement({id: "addNewProject"});
+        const addNewProjectDialog = makeElement({id: `addNew${dialogFor}dialog`});
         body.appendChild(addNewProjectDialog);
     }
 
