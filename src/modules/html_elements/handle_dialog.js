@@ -67,7 +67,7 @@ const createDialogs = (function initDialogs() {
         makeCloseButtonInDialog();
         makeFormInDialog();
         makeTextInputForTitle();
-        makeFormSubmitButton();
+        makeFormSubmitButton({buttonTextcontent: "Create Project"});
         showDialog();
     }
 
