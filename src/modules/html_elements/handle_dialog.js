@@ -62,18 +62,29 @@ const createDialogs = (function initDialogs() {
     function makeNewProjectDialog() {
         makeNewDialog({dialogFor: "Project"});
         makeHeaderInDialog();
-        makeTitleInDialog({ dialogTitle: "Create New Project."})
+        makeTitleInDialog({dialogTitle: "Create New Project."});
         makeCloseButtonInDialog();
         makeFormInDialog();
         makeFormSubmitButton({buttonTextcontent: "Create Project"});
         showDialog();
     }
 
+    function makeNewTaskDialog() {
+        makeNewDialog({dialogFor: "Task"});
+        makeHeaderInDialog();
+        makeTitleInDialog({dialogTitle: "Create New Task."});
+        makeCloseButtonInDialog();
+        makeFormInDialog();
+        makeFormSubmitButton({buttonTextcontent: "Create Task"});
+        showDialog();
+    }
+
     return {
         makeNewProjectDialog,
+        makeNewTaskDialog,
     }
 })();
 
-const { makeNewProjectDialog } = createDialogs;
+const { makeNewProjectDialog, makeNewTaskDialog } = createDialogs;
 
-export default makeNewProjectDialog;
+export { makeNewProjectDialog, makeNewTaskDialog };
