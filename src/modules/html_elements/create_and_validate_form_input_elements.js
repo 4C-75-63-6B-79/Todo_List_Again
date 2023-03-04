@@ -1,4 +1,4 @@
-import { makeInput } from "./html_create_function";
+import { makeElement, makeInput } from "./html_create_function";
 
 const createFormsElements = (function initFormElements() {
 
@@ -10,7 +10,14 @@ const createFormsElements = (function initFormElements() {
 
     function makeFormDescriptionInput() {
         const form = document.querySelector("form");
-        const inputDescription = makeInput({type: "text", name: "description", minLength: "20", maxLength: "80", placeholder: "Task Description", required: "true"});
+        const inputDescription = makeElement({elementType: "textarea", attributesAndValues: {
+            "minLength": "20",
+            "maxLength": "60",
+            "rows": "4",
+            "name": "description",
+            "placeholder": "Task Description",
+            "required": "",
+        } });
         form.appendChild(inputDescription);
     }
 
