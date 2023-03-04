@@ -27,13 +27,13 @@ const createFormsElements = (function initFormElements() {
         form.appendChild(inputDate);
     }
 
-    function makePriorityRadioButtonsFieldset() {
+    function makeFormPriorityRadioButtonsFieldset() {
         const form = document.querySelector("form");
         const radioButtonsFieldset = makeElement({elementType: "fieldset"});
         form.appendChild(radioButtonsFieldset);
     }
 
-    function makePriorityLegend() {
+    function makeFormPriorityLegend() {
         const radioButtonFieldset = document.querySelector("fieldset");
         const priorityLegend = makeElement({elementType: "legend", textContent: "Priority", title: "priority"});
         radioButtonFieldset.appendChild(priorityLegend);
