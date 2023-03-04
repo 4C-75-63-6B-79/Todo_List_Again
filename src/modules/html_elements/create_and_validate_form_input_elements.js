@@ -4,7 +4,7 @@ const createFormsElements = (function initFormElements() {
 
     function makeFormTitleInput() {
         const form = document.querySelector("form");
-        const inputTitle = makeInput({type: "text", name: "title", minLength: "5", maxLength: "40", placeholder: "Title", required: "true"});
+        const inputTitle = makeInput({type: "text", name: "title", minLength: "5", maxLength: "40",  size: "40",  placeholder: "Title", required: "true"});
         form.appendChild(inputTitle);
     }
 
