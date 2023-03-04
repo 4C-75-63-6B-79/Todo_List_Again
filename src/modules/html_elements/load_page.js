@@ -1,4 +1,4 @@
-import makeNewProjectDialog from "./handle_dialog";
+import { makeNewProjectDialog, makeNewTaskDialog } from "./handle_dialog";
 import { makeElement, makeInput, makeButton } from "./html_create_function";
 
 const firstPage = (function initFirstPage() {
@@ -147,6 +147,10 @@ const firstPage = (function initFirstPage() {
         const main = document.querySelector("main");
         const tasksContainer = makeElement({id: "tasksContainer"});
         main.appendChild(tasksContainer);
+    }
+
+    function addNewTaskButtonClicked() {
+        makeNewTaskDialog();
     }
 
     function makeAddNewTaskButton() {
