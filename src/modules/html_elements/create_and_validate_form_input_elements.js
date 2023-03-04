@@ -8,4 +8,10 @@ const createFormsElements = (function initFromElements() {
         form.appendChild(inputTitle);
     }
 
+    function makeFromDescriptionInput() {
+        const form = document.querySelector("form");
+        const inputDescription = makeInput({type: "text", name: "description", minLength: "20", maxLength: "80", placeholder: "Task Description", required: "true"});
+        form.appendChild(inputDescription);
+    }
+
 })();
