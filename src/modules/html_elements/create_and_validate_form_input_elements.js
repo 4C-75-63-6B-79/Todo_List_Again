@@ -27,8 +27,14 @@ const createFormsElements = (function initFormElements() {
         form.appendChild(inputDate);
     }
 
-    function makeFormPriorityInput() {
+    function makePriorityRadioButtonsFieldset() {
         const form = document.querySelector("form");
+        const radioButtonsFieldset = makeElement({elementType: "fieldset"});
+        form.appendChild(radioButtonsFieldset);
+    }
+
+    function makeFormPriorityInput() {
+        const radioButtonsDiv = document.querySelector("radioButtonsDiv");
         const lowPriorityInput = makeInput({type: "radio", name: "priority", value: "low"});
         const mediumPriorityInput = makeInput({type: "radio", name: "priority", value: "medium"});
         const highPriorityInput = makeInput({type: "radio", name: "priority", value: "high"});
