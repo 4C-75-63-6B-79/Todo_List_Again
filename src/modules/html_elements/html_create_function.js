@@ -73,7 +73,7 @@ function makeImg({id, src, title}) {
     return img;
 }
 
-function makeInput({type, id, name, pattern, minLength, maxLength, placeholder, required}) {
+function makeInput({type, id, name, pattern, minLength, maxLength, size, placeholder, required, attributesAndValues}) {
     const input = document.createElement("input");
     if(type) {
         input.setAttribute("type", type);
@@ -93,11 +93,20 @@ function makeInput({type, id, name, pattern, minLength, maxLength, placeholder, 
     if(maxLength) {
         input.setAttribute("maxlength", `${Number(maxLength)}`);
     }
+    if(size) {
+        input.setAttribute("size", `${size}`);
+    }
     if(placeholder) {
         input.setAttribute("placeholder", placeholder);
     }
     if(required) {
         input.setAttribute("required", "");
+    }
+    if(attributesAndValues) {
+        const attributes = Object.keys(attributesAndValues);
+        attributes.forEach((key) => {
+            input.setAttribute(key, attributesAndValues[key]);
+        });
     }
     return input
 }
