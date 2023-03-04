@@ -155,7 +155,7 @@ const firstPage = (function initFirstPage() {
 
     function makeAddNewTaskButton() {
         const main = document.querySelector("main");
-        const addNewTaskButton = makeButton({id: "addNewTask", textContent: "+ Add New Tasks", title: "Add New Task Button"});
+        const addNewTaskButton = makeButton({id: "addNewTask", textContent: "+ Add New Tasks", title: "Add New Task Button", event: "click", callBackFunction: [addNewTaskButtonClicked]});
         main.appendChild(addNewTaskButton);
     }
 
