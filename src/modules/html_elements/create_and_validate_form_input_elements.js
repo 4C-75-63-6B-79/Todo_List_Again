@@ -47,6 +47,14 @@ const createFormsElements = (function initFormElements() {
         radioButtonFieldset.appendChild(lowPriorityLabel);
     }
 
+    function makeFromMediumPriorityInput() {
+        const radioButtonFieldset = document.querySelector("fieldset");
+        const mediumPriorityLabel = makeElement({elementType: "label", textContent: "Medium", title: "medium priority", attributesAndValues: {"for": "mediumPriority"} })
+        const mediumPriorityInput = makeInput({type: "radio", id: "mediumPriority", name: "priority", value: "medium", required: "true"});
+        mediumPriorityLabel.appendChild(mediumPriorityInput);
+        radioButtonFieldset.appendChild(mediumPriorityLabel);
+    }
+
     function makeFormPriorityInput() {
 
         
