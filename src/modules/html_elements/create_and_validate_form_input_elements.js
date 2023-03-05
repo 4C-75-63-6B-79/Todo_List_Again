@@ -63,4 +63,16 @@ const createFormsElements = (function initFormElements() {
         radioButtonFieldset.appendChild(highPriorityLabel);
     }
 
+    function makeInputFieldsForNewProject() {
+        makeFormTitleInput();
+    }
+
+    return {
+        makeInputFieldsForNewProject,
+    }
+
 })();
+
+const { makeInputFieldsForNewProject } = createFormsElements;
+
+export default makeInputFieldsForNewProject;
