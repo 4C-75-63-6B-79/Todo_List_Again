@@ -75,12 +75,20 @@ const createFormsElements = (function initFormElements() {
         makeFormTitleInput();
     }
 
+    function makeInputFieldsForNewTask() {
+        makeFormTitleInput();
+        makeFormDescriptionInput();
+        makeFormDateInput();
+        makeFormPriorityInputs();
+    }
+
     return {
         makeInputFieldsForNewProject,
+        makeInputFieldsForNewTask,
     }
 
 })();
 
-const { makeInputFieldsForNewProject } = createFormsElements;
+const { makeInputFieldsForNewProject, makeInputFieldsForNewTask } = createFormsElements;
 
-export default makeInputFieldsForNewProject;
+export { makeInputFieldsForNewProject, makeInputFieldsForNewTask };
