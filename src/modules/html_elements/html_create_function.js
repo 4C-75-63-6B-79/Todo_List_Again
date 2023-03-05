@@ -108,7 +108,7 @@ function makeInput({type, id, name, pattern, minLength, maxLength, size, placeho
             input.setAttribute(key, attributesAndValues[key]);
         });
     }
-    return input
+    return input;
 }
 
-export { makeElement, makeButton, makeImg, makeInput }
+export { makeElement, makeButton, makeImg, makeInput };

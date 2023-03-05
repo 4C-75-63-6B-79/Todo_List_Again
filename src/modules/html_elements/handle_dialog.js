@@ -85,7 +85,7 @@ const createDialogs = (function initDialogs() {
     return {
         makeNewProjectDialog,
         makeNewTaskDialog,
-    }
+    };
 })();
 
 const { makeNewProjectDialog, makeNewTaskDialog } = createDialogs;

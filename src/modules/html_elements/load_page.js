@@ -197,7 +197,7 @@ const firstPage = (function initFirstPage() {
 
     return {
         loadFirstPage,
-    }
+    };
 })();
 
 const {loadFirstPage} = firstPage;
