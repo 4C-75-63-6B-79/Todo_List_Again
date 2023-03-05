@@ -1,3 +1,4 @@
+import { makeInputFieldsForNewProject, makeInputFieldsForNewTask } from "./create_and_validate_form_input_elements";
 import { makeButton, makeElement } from "./html_create_function";
 
 const createDialogs = (function initDialogs() {
@@ -65,6 +66,7 @@ const createDialogs = (function initDialogs() {
         makeTitleInDialog({dialogTitle: "Create New Project."});
         makeCloseButtonInDialog();
         makeFormInDialog();
+        makeInputFieldsForNewProject();
         makeFormSubmitButton({buttonTextcontent: "Create Project"});
         showDialog();
     }
@@ -75,6 +77,7 @@ const createDialogs = (function initDialogs() {
         makeTitleInDialog({dialogTitle: "Create New Task."});
         makeCloseButtonInDialog();
         makeFormInDialog();
+        makeInputFieldsForNewTask();
         makeFormSubmitButton({buttonTextcontent: "Create Task"});
         showDialog();
     }
