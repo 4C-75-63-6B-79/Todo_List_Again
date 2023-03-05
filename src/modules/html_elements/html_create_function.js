@@ -1,4 +1,4 @@
-function makeElement({elementType = "div", id, classNames, textContent, title, dataAttributeName, dataAttributeValue, events, callBackFunctions, attributesAndValues}) {
+function makeElement({ elementType = "div", id, classNames, textContent, title, dataAttributeName, dataAttributeValue, events, callBackFunctions, attributesAndValues }) {
     const element = document.createElement(`${elementType}`);
     if(id) {
         element.setAttribute("id", id);
@@ -28,7 +28,7 @@ function makeElement({elementType = "div", id, classNames, textContent, title, d
     return element;
 }
 
-function makeButton({id, classNames, textContent, title, dataAttributeName, dataAttributeValue, event, callBackFunction, attributesAndValues}) {
+function makeButton({ id, classNames, textContent, title, dataAttributeName, dataAttributeValue, event, callBackFunction, attributesAndValues }) {
     const button = document.createElement("button");
     button.setAttribute("type", "button");
     if(id) {
@@ -59,7 +59,7 @@ function makeButton({id, classNames, textContent, title, dataAttributeName, data
     return button;
 }
 
-function makeImg({id, src, title}) {
+function makeImg({ id, src, title }) {
     const img = new Image();
     if(id) {
         img.setAttribute("id", id);
@@ -73,7 +73,7 @@ function makeImg({id, src, title}) {
     return img;
 }
 
-function makeInput({type, id, name, pattern, minLength, maxLength, size, placeholder, required, attributesAndValues}) {
+function makeInput({ type, id, name, pattern, minLength, maxLength, size, placeholder, required, attributesAndValues }) {
     const input = document.createElement("input");
     if(type) {
         input.setAttribute("type", type);

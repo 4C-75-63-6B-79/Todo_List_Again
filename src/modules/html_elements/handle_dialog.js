@@ -3,21 +3,21 @@ import { makeButton, makeElement } from "./html_create_function";
 
 const createDialogs = (function initDialogs() {
 
-    function makeNewDialog({dialogFor}) {
+    function makeNewDialog({ dialogFor }) {
         const body = document.querySelector("body");
-        const addNewProjectDialog = makeElement({elementType: "dialog", id: `addNew${dialogFor}dialog`});
+        const addNewProjectDialog = makeElement({ elementType: "dialog", id: `addNew${dialogFor}dialog` });
         body.appendChild(addNewProjectDialog);
     }
 
     function makeHeaderInDialog() {
         const dialog = document.querySelector("dialog");
-        const header = makeElement({elementType: "header", id:"dialogHeader"});
+        const header = makeElement({ elementType: "header", id:"dialogHeader" });
         dialog.appendChild(header);
     }
 
-    function makeTitleInDialog({dialogTitle}) {
+    function makeTitleInDialog({ dialogTitle }) {
         const header = document.getElementById("dialogHeader");
-        const h2Title = makeElement({elementType: "h2", textContent: dialogTitle, title: dialogTitle});
+        const h2Title = makeElement({ elementType: "h2", textContent: dialogTitle, title: dialogTitle });
         header.appendChild(h2Title);
     }
     
@@ -33,13 +33,13 @@ const createDialogs = (function initDialogs() {
 
     function makeCloseButtonInDialog() {
         const header = document.getElementById("dialogHeader");
-        const closeButton = makeButton({id: "closeButtonInDialog", textContent: "X", title: "Close Dialog Button", event: "click", callBackFunction: [closeButtonClicked]});
+        const closeButton = makeButton({ id: "closeButtonInDialog", textContent: "X", title: "Close Dialog Button", event: "click", callBackFunction: [closeButtonClicked] });
         header.appendChild(closeButton);
     }
 
     function makeFormInDialog() {
         const dialog = document.querySelector("dialog");
-        const form = makeElement({elementType: "form", attributesAndValues: {"method": "dialog"}});
+        const form = makeElement({ elementType: "form", attributesAndValues: { "method": "dialog" } });
         dialog.appendChild(form);
     }
 
@@ -48,9 +48,9 @@ const createDialogs = (function initDialogs() {
         removeDialog();
     }
 
-    function makeFormSubmitButton({buttonTextcontent}) {
+    function makeFormSubmitButton({ buttonTextcontent }) {
         const form = document.querySelector("form");
-        const submitButton = makeButton({textContent: buttonTextcontent, title: `Confirm ${buttonTextcontent} Button`, attributesAndValues: {"type": "submit"}, event: "click", callBackFunction: [createButtonClicked]});
+        const submitButton = makeButton({ textContent: buttonTextcontent, title: `Confirm ${buttonTextcontent} Button`, attributesAndValues: { "type": "submit" }, event: "click", callBackFunction: [createButtonClicked] });
         form.appendChild(submitButton);
     }
 
@@ -61,24 +61,24 @@ const createDialogs = (function initDialogs() {
 
 
     function makeNewProjectDialog() {
-        makeNewDialog({dialogFor: "Project"});
+        makeNewDialog({ dialogFor: "Project" });
         makeHeaderInDialog();
-        makeTitleInDialog({dialogTitle: "Create New Project."});
+        makeTitleInDialog({ dialogTitle: "Create New Project." });
         makeCloseButtonInDialog();
         makeFormInDialog();
         makeInputFieldsForNewProject();
-        makeFormSubmitButton({buttonTextcontent: "Create Project"});
+        makeFormSubmitButton({ buttonTextcontent: "Create Project" });
         showDialog();
     }
 
     function makeNewTaskDialog() {
-        makeNewDialog({dialogFor: "Task"});
+        makeNewDialog({ dialogFor: "Task" });
         makeHeaderInDialog();
-        makeTitleInDialog({dialogTitle: "Create New Task."});
+        makeTitleInDialog({ dialogTitle: "Create New Task." });
         makeCloseButtonInDialog();
         makeFormInDialog();
         makeInputFieldsForNewTask();
-        makeFormSubmitButton({buttonTextcontent: "Create Task"});
+        makeFormSubmitButton({ buttonTextcontent: "Create Task" });
         showDialog();
     }
 
