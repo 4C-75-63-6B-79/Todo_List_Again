@@ -39,36 +39,24 @@ const createFormsElements = (function initFormElements() {
         radioButtonFieldset.appendChild(priorityLegend);
     }
 
-    function makeFromLowPriorityInput() {
+    function makePriorityInput({ textContent, id, title, value }) {
         const radioButtonFieldset = document.querySelector("fieldset");
-        const lowPriorityLabel = makeElement({ elementType: "label", textContent: "Low", title: "low priority", attributesAndValues: { "for": "lowPriority" } });
-        const lowPriorityInput = makeInput({ type: "radio", id: "lowPriority", name: "priority", value: "low", required: "true" });
-        radioButtonFieldset.appendChild(lowPriorityInput);
-        radioButtonFieldset.appendChild(lowPriorityLabel);
+        const priorityInputLabel = makeElement({ elementType: "label", textContent, title, attributesAndValues: { "for": id } });
+        const priorityInput = makeInput({ type: "radio", id, name: "priority", value, required: "true" });
+        radioButtonFieldset.appendChild(priorityInput);
+        radioButtonFieldset.appendChild(priorityInputLabel);
     }
 
-    function makeFromMediumPriorityInput() {
-        const radioButtonFieldset = document.querySelector("fieldset");
-        const mediumPriorityLabel = makeElement({ elementType: "label", textContent: "Medium", title: "medium priority", attributesAndValues: { "for": "mediumPriority" } });
-        const mediumPriorityInput = makeInput({ type: "radio", id: "mediumPriority", name: "priority", value: "medium", required: "true" });
-        radioButtonFieldset.appendChild(mediumPriorityInput);
-        radioButtonFieldset.appendChild(mediumPriorityLabel);
-    }
-
-    function makeFromHighPriorityInput() {
-        const radioButtonFieldset = document.querySelector("fieldset");
-        const highPriorityLabel = makeElement({ elementType: "label", textContent: "High", title: "high priority", attributesAndValues: { "for": "highPriority" } });
-        const highPriorityInput = makeInput({ type: "radio", id: "highPriority", name: "priority", value: "high", required: "true" });
-        radioButtonFieldset.appendChild(highPriorityInput);
-        radioButtonFieldset.appendChild(highPriorityLabel);
+    function makeAllPriorityInput() {
+        makePriorityInput({ textContent: "Low", id: "lowPriority", title: "low priority", value: "low" });
+        makePriorityInput({ textContent: "Medium", id: "mediumPriority", title: "medium priority", value: "medium" });
+        makePriorityInput({ textContent: "High", id: "highPriority", title: "high priority", value: "high" });
     }
 
     function makeFormPriorityInputs() {
         makeFormPriorityRadioButtonsFieldset();
         makeFormPriorityLegend();
-        makeFromLowPriorityInput();
-        makeFromMediumPriorityInput();
-        makeFromHighPriorityInput();
+        makeAllPriorityInput();
     }
 
     function makeInputFieldsForNewProject() {
