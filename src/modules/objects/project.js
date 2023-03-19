@@ -10,3 +10,9 @@ Project.prototype.addTask = function addTask({ title, description }) {
     this.taskList.push(task);
 };
 
+Project.prototype.getTaskAtIndex = function getTaskAtIndex(index) {
+    if(this.taskList.length <= index) {
+        return false;
+    }
+    return this.taskList[index];
+};
