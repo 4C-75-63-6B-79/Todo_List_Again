@@ -18,3 +18,13 @@ test("function getTaskAtIndex returns false if index is greater than tasklist le
     const testProject = new Project("test project");
     expect(testProject.getTaskAtIndex(10)).toBe(false);
 });
+
+test("function getTaskAtIndex returns task at specific index in tasklist", () => {
+    const testProject = new Project("test project");
+    testProject.addTask({ title: "test task", description: "test task description" });
+    const testTask = testProject.getTaskAtIndex(0);
+
+    // testing if the return value is task object with specific properties
+    expect(Object.prototype.hasOwnProperty.call(testTask, "title")).toBe(true);
+    expect(Object.prototype.hasOwnProperty.call(testTask, "description")).toBe(true);
+});
