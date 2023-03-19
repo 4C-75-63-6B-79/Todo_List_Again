@@ -13,3 +13,8 @@ test("function add task add a task to the task list in project", () => {
     testProject.addTask({ title: "test task", description: "to test the add function" });
     expect(testProject.taskList.length).toBe(1);
 });
+
+test("function getTaskAtIndex returns false if index is greater than tasklist length", () => {
+    const testProject = new Project("test project");
+    expect(testProject.getTaskAtIndex(10)).toBe(false);
+});
