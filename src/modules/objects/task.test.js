@@ -2,8 +2,7 @@
 
 import Task from "./task";
 
-test("mark complete function of the task makes the iscompleted function true", () => {
+test("mark complete function of the task makes the iscompleted to true and returns the value of isCompleted", () => {
     const testTask = new Task({ title: "new task", description: "testing task" });
-    testTask.markComplete();
-    expect(testTask.isCompleted).toBe(true);
+    expect(testTask.markComplete()).toBe(true);
 });
