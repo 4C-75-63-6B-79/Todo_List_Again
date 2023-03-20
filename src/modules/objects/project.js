@@ -14,5 +14,12 @@ Project.prototype.getTaskAtIndex = function getTaskAtIndex(index) {
     if(this.taskList.length <= index) {
         return false;
     }
-    return this.taskList[index];
+    return ({ ...this.taskList[index] });
+};
+
+Project.prototype.markTaskCompleteAtIndex = function markTaskCompleteAtIndex(index) {
+    if(this.taskList.length <= index) {
+        return false;
+    }
+    return this.taskList[index].markComplete();    
 };
