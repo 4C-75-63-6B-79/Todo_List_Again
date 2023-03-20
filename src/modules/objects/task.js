@@ -6,4 +6,5 @@ export default function Task({ title, description }) {
 
 Task.prototype.markComplete = function markComplete() {
     this.isCompleted = true;
+    return this.isCompleted;
 };
