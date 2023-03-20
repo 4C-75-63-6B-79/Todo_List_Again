@@ -28,3 +28,14 @@ test("function getTaskAtIndex returns task at specific index in tasklist", () =>
     expect(Object.prototype.hasOwnProperty.call(testTask, "title")).toBe(true);
     expect(Object.prototype.hasOwnProperty.call(testTask, "description")).toBe(true);
 });
+
+test("function markTaskCompleteAtIndex returns false if index is more than the task list length", () => {
+    const testProject = new Project("test project");
+    expect(testProject.markTaskCompleteAtIndex(0)).toBe(false);
+});
+
+test("function markTaskCOmpleteAtIndex marks the task at index complete and returs the isComplete value of the task", () => {
+    const testProject = new Project("test project");
+    testProject.addTask({ title: "test task", description: "test task description" });
+    expect(testProject.markTaskCompleteAtIndex(0)).toBe(true);
+});
