@@ -23,3 +23,10 @@ Project.prototype.markTaskCompleteAtIndex = function markTaskCompleteAtIndex(ind
     }
     return this.taskList[index].markComplete();    
 };
+
+Project.prototype.deleteTaskAtIndex = function deleteTaskAtIndex(index) {
+    if(this.taskList.length <= index) {
+        return false;
+    }
+    return { ...this.taskList.splice(index, 1)[0] };  // splice returns array and then we are destructuring the object at index 0 in array.
+};
