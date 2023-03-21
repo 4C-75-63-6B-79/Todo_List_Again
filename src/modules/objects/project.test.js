@@ -40,3 +40,17 @@ test("function markTaskCOmpleteAtIndex marks the task at index complete and retu
     testProject.addTask({ title: "test task", description: "test task description" });
     expect(testProject.markTaskCompleteAtIndex(0)).toBe(true);
 });
+
+test("function deleteTaskAtIndex returns false if the index is more than the task in that index.", () => {
+    const testProject = new Project("test project");
+    expect(testProject.markTaskCompleteAtIndex(0)).toBe(false);
+});
+
+test("function deleteTaskAtIndex delete the task at the index an returns the deleted task", () => {
+    const testProject = new Project("test project");
+    testProject.addTask({ title: "test task", description: "test task description" });
+    const deletedTask = testProject.deleteTaskAtIndex(0);
+    console.log(deletedTask);
+    expect(Object.prototype.hasOwnProperty.call(deletedTask, "title")).toBe(true);
+    expect(Object.prototype.hasOwnProperty.call(deletedTask, "description")).toBe(true);
+});
