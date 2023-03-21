@@ -27,6 +27,7 @@ test("function getTaskAtIndex returns task at specific index in tasklist", () =>
     // testing if the return value is task object with specific properties
     expect(Object.prototype.hasOwnProperty.call(testTask, "title")).toBe(true);
     expect(Object.prototype.hasOwnProperty.call(testTask, "description")).toBe(true);
+    expect(Object.prototype.hasOwnProperty.call(testTask, "isCompleted")).toBe(true);
 });
 
 test("function markTaskCompleteAtIndex returns false if index is more than the task list length", () => {
